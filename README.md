@@ -1,2 +1,2 @@
-chetsheet
+cheatsheet
 =========
