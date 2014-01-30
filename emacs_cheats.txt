@@ -1,1 +1,5 @@
-test, will edit later
+//open shell in emacs
+M-x shell
+
+//options on click
+shift left click
