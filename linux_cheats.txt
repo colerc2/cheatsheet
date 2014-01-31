@@ -8,3 +8,6 @@ sudo pkill X
 1. manually start /usr/bin/vmware-user
 2. log out and log back into dsesktop session
 3. restart x session
+
+//run vmware tools by invoking
+/usr/bin/vmware-toolbox-cmd
