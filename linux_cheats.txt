@@ -1,2 +1,10 @@
 //make shell script executable
 chmod u+x blah.sh
+
+//restart x session
+sudo pkill X
+
+//enable advanced X features with vmware
+1. manually start /usr/bin/vmware-user
+2. log out and log back into dsesktop session
+3. restart x session
