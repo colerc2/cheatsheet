@@ -11,16 +11,19 @@ STL = -std=c++11
 CFLAGS = $(DEBUG_FLAGS) -O2 $(STL)
 
 # Name your executable
-EXE = 				\
+EXE = 	some_executable		\
+	another_exe
 
 # This tells the compiler where to put the compiler generated object files
-OBJ = 				\
+OBJ =	obj/some_object.o	\
+	obj/some_other_object.o 
 
-EXEOBJ = obj/tester.o	\
+EXEOBJ = obj/some_executable.o	\
+	obj/another_exe.o
 
 all: bootstrap $(EXE)
 # Rule to build the executable
-$(EXE): $(OBJ) $(EXEOBJ) src/*.hpp
+$(EXE): $(OBJ) $(EXEOBJ) src/*.h src/*.hpp
 	@echo "  LD	$@"
 	@ $(CC) $(CFLAGS) -o $@ $(OBJ) obj/$@.o $(LDFLAGS)
 
