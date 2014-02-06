@@ -7,7 +7,7 @@ CC = g++
 
 # Look for this debug flag
 DEBUG_FLAGS = -g -Wall
-STL = -std=c++11
+STL = -std=c++0x
 CFLAGS = $(DEBUG_FLAGS) -O2 $(STL)
 
 # Name your executable
