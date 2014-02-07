@@ -13,5 +13,5 @@ sudo pkill X
 /usr/bin/vmware-toolbox-cmd
 
 //mount shared drive
-sudo smbmount //192.168.0.107/z ~/network_drives/z -o user=bob
+sudo smbmount //192.168.0.105/z ~/network_drives/z -o user=bob
 
