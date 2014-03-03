@@ -15,3 +15,7 @@ sudo pkill X
 //mount shared drive
 sudo smbmount //192.168.0.105/z ~/network_drives/z -o user=bob
 
+//source bashrc at ssh login, place this in ~/.bash_profile
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
