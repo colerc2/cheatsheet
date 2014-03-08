@@ -11,3 +11,46 @@ source devel/setup.bash
 //create new ros package
 cd ~/catkin_ws/src
 catkin_create_pkg pkg_name std_msgs rospy roscpp
+
+#include <ros/ros.h>
+#include <ros/time.h>
+#include <string>
+#include <vector>
+
+ros::Subscriber global_sub_;
+ros::Publisher global_pub_;
+
+
+int main(int argc, char** argv){
+  //Node setup
+  ros::init(argc, argv, "node name");
+  ros::NodeHandle n;//global
+  ros::NodeHandle nh("~");//local
+  
+  std::string some_param;
+  int some_other_param;
+
+  nh.param("some_param", some_param, std::string("default_value"));
+  nh.param("some_other_param", some_other_param, 0);
+
+  //Services
+  ros::ServiceServer service = n.advertiseService("service_name", service_request);
+  
+  //Subscribers
+  global_sub_ = n.subscribe("subscribe_topic", 1, subscriber_callback);
+  
+  //Publishers
+  global_pub_ = n.advertise<example_node::some_msg>("topic_name", 10);
+
+  ros::Rate rate(100);
+  //use a single thread for callbacks
+  ros::AsyncSpinner spinner(1);
+  spinner.start();
+  while(ros::ok()){
+    //do other stuff here in main thread
+    rate.sleep();
+  }
+  spinner.stop();
+
+  return 0;
+}
