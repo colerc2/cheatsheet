@@ -29,3 +29,6 @@ void split_to_string(const std::string &s, char delim, std::vector<std::string> 
     elements.push_back(item);
   }
 }
+
+//erase a char from a string
+ str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
