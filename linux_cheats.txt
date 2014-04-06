@@ -19,3 +19,6 @@ sudo smbmount //192.168.0.105/z ~/network_drives/z -o user=bob
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
+
+//reserve stuff on cluster
+qsub –X -I -l"nodes=1:ppn=4"
